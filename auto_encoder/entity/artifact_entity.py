@@ -6,7 +6,7 @@ class DataIngestionArtifact:
 
 @dataclass
 class DataCleaningArtifact:
-    pass
+    cleaned_file_path:str
 
 @dataclass
 class DataValidationArtifact:

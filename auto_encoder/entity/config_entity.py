@@ -6,6 +6,7 @@ from auto_encoder import utils
 from typing import List
 
 FILE_NAME = os.getenv('FILE_NAME')
+CLEANED_FILE_NAME = os.getenv('CLEANED_FILE_NAME')
 
 class TrainingPipelineConfig:
     def __init__(self):
@@ -28,3 +29,11 @@ class DataingestionConfig:
             raise AutoencoderException(e,sys)
 
 
+class DataCleaningConfig:
+    def __init__(self,Training_pipeline_config:TrainingPipelineConfig):
+        try:
+            self.data_cleainig_dir = os.path.join(Training_pipeline_config.artifact_dir,'datacleaning')
+            self.data_dir = os.path.join(self.data_cleainig_dir,'cleaned_file')
+            self.cleaned_file_path = os.path.join(self.data_dir,CLEANED_FILE_NAME)
+        except Exception as e:
+            raise AutoencoderException(e,sys)

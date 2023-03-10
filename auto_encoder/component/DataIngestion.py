@@ -18,9 +18,13 @@ class DataIngestion:
             list_of_file_path = self.dataingestionconfig.history_file_path
             df = pd.read_csv(list_of_file_path[0])
             df2 = pd.read_csv(list_of_file_path[1])
+            df3 = pd.read_csv(list_of_file_path[2])
+
             logging.info(f"merging the histories files in a one file..")
-            merged_df = pd.merge(left=df,right=df2,how='outer')
-            title = merged_df[['title']]
+            merge1 = pd.merge(left=df,right=df2,how='outer')
+            merge2 = pd.merge(left=merge1,right=df3,how='outer')
+            title = merge2[['title']]
+            logging.info(f"file size after merged :- {merge2.shape}")
             return title
         except Exception as e:
             raise AutoencoderException(e,sys)

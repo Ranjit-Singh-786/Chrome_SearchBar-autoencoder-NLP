@@ -10,6 +10,8 @@ for i in files:
         file_path = os.path.join(f'Data/{i}')
         df = pd.read_csv(file_path)
         title = df[['title']]
+
+
         unique_titles = title.drop_duplicates()
         unique_titles.reset_index(inplace=True)
         unique_titles = unique_titles.drop('index',axis=1)
@@ -31,7 +33,8 @@ for i in files:
 
         df3 = pd.DataFrame({'title':removed_lincs})
 
-        # to clean the search history text
+
+# to clean the search history text
         for i in range(len(df3)):
             lowered = df3['title'][i].lower()
             cleaned_content = re.sub("[^a-zA-Z]"," ",lowered)  
