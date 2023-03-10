@@ -2,7 +2,7 @@ from dataclasses import dataclass
 
 @dataclass
 class DataIngestionArtifact:
-    pass
+    merge_df_path:str
 
 @dataclass
 class DataCleaningArtifact:
