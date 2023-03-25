@@ -37,13 +37,14 @@ class ModelEvaluation:
             evaluation_result = model.evaluate(x_train,y_train)
 
             loss = evaluation_result[0] * 10
-            accuracy = evaluation_result[1] * 10
+            accuracy = evaluation_result[1] * 100
+            loss = round(loss,2)
+            accuracy = round(accuracy,2)
             logging.info(f"model evaluted with this accuracy :-{accuracy} and loss is :- {loss}")
 
             difference= accuracy - loss
-            print(loss)
-            print(accuracy)
-            if difference >20:
+
+            if (difference >20) or (difference < 0):
                 logging.info(f"Model is underfit !")
                 print(f"model is underfit Try to improve the accuracy of your model!")
 
@@ -55,5 +56,6 @@ class ModelEvaluation:
                 logging.info(f"Hurray , model is generelized !")
                 print(f'model is generailized !')
             print(f"model successfully evaluated !")
+
         except Exception as e:
             raise AutoencoderException(e,sys)
