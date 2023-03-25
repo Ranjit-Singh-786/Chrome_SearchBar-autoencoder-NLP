@@ -83,7 +83,8 @@ class ModelTrainerConfig:
             try:
                 self.model_trainer_dir = os.path.join(Training_pipeline_config.artifact_dir,'Model')
                 self.model_file_path = os.path.join(self.model_trainer_dir,MODEL_NAME)
-                
+                self.epoch_history_dir = os.path.join(self.model_trainer_dir,"epoch_history")
+                self.epoch_history_file_path = os.path.join(self.epoch_history_dir,'epoch_history.pkl')                
             except Exception as e:
                 raise AutoencoderException(e,sys)
 

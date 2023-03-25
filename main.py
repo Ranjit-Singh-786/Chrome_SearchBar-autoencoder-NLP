@@ -6,6 +6,7 @@ from auto_encoder.component.DataCleaning import DataCleaning
 from auto_encoder.component.DataValidation import DataValidation
 from auto_encoder.component.DataTransformation import DataTransformation
 from auto_encoder.component.ModelTrainer import ModelTrainer
+from auto_encoder.component.ModelEvaluatin import ModelEvaluation
 import os,sys
 from auto_encoder import utils
 
@@ -43,6 +44,11 @@ if __name__=="__main__":
         ModelTrainerObj = ModelTrainer(transformerartifact=DataTransformationArtifact,
                                        modeltrainerconfig=ModelTrainerconfigObj) 
         model_trainer_artifact = ModelTrainerObj.InitiateModelTrainer()
+
+
+        ModelEvaluation_obj = ModelEvaluation(modeltrainerartifact=model_trainer_artifact,
+                                          modeltrainerconfig=ModelTrainerconfigObj)
+        ModelEvaluation_obj.InitiateModelEvaluation()
         
                            
     except Exception as e:

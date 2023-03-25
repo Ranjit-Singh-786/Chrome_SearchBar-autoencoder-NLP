@@ -54,11 +54,17 @@ class ModelTrainer:
             checkpoint = ModelCheckpoint(model_file_path,monitor='loss',verbose=1,save_best_only=True)
             model_history = model.fit(x_train,y_train,epochs=1,batch_size=50,callbacks=[checkpoint])
 
-            print(vocab_size)
-            print(x_train.shape)
-            print(y_train.shape)
+            logging.info(f"model trained successfully !")
+            history = model_history.history
+            epoch_history_file_path = self.modeltrainerconfig.epoch_history_file_path
+            utils.save_object(file_path=epoch_history_file_path,obj=history)
+
+
             model_trainer_artifact = artifact_entity.ModelTrainerArtifact(
-                model_file_path=model_file_path
+                model_file_path=model_file_path,
+                epoch_history_file_path=epoch_history_file_path,
+                x_train_file_path=x_train_data_path,
+                y_train_file_path=y_train_data_path
             )
             return model_trainer_artifact
         except Exception as e:

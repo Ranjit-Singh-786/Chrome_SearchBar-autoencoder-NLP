@@ -26,6 +26,9 @@ class DataTransformationArtifact:
 @dataclass
 class ModelTrainerArtifact:
     model_file_path:str
+    epoch_history_file_path:str
+    x_train_file_path:str
+    y_train_file_path:str
 
 @dataclass
 class ModelEvaluationArtifact:
