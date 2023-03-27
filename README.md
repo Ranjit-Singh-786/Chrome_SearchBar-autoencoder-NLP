@@ -23,7 +23,7 @@ and in the modelEvaluation my code will compare accuracy to the previous model. 
 <li>ModelPusher.</li>
 </ul>
 
-### To complete this project, i arranged or scraped chrome History of multiple chrome users.
+### To complete this project, i arranged chrome History from multiple chrome users.
 <p><b>i arranged the chrome history from multiple of my collegeus and friends, because i wants to complete this project on the realworld dataset. when i was got the histories of the chrome users, there are very messy data was available, i did lot of text preprocessing on the chrome user histories. then i performed NLP operation on my dataset. </b></p>
 
 <p><b>Code written in Modular fashion, i used Object oriented programing concepts<br>

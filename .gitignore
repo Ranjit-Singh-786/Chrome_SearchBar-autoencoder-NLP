@@ -1,3 +1,5 @@
 artifacts/
 artifacts/*
-.pkl
+saved_models
+artifacts
+Data/
