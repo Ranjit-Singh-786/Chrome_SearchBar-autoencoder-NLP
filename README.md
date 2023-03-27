@@ -29,4 +29,29 @@ and in the modelEvaluation my code will compare accuracy to the previous model. 
 <p><b>Code written in Modular fashion, i used Object oriented programing concepts<br>
 of python, and followed the industry standard of project.</b></p>
 
-Thank You 🖋
+### steps to execute this project
+<ul>
+<li>run the requirements.txt file</li>
+<li>to train the pipeline run the train.py file</li>
+<li>to test the model performance, run the test.py</li>
+</ul>
+
+### commands to execute the project
+<ul>
+<li>pip install -r requirements.txt</li>
+<li>python train.py</li>
+<li>python test.py</li>
+</ul>
+
+### key points
+
+## train.py
+<p>when you will execute the train.py file. it will start the training pipeline process and it will execute all the components one by one which i written in training pipeline, and execution report will be stored in the logs folder in the form of logs. and all the models and Data and other iformation will be stored in the artifact directory.
+</p>
+
+## test.py
+when you will execute the test.py file. first it will start training of training pipeline. after execution of training pipeline it will ask to you,"do you want to test the performance of model" you can insert "Y" / 'N'.
+it will guide you to during the testing. that,s why you can easily test this project.
+because every lines of code i has customize, in this project. and this is my personal project. i written each and every lines of code and logics by itself to complete this project. i did not take any refferenced from youtube and any other resuarces to complete this project.
+
+Thank You ❤🤍❤
