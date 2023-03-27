@@ -37,6 +37,6 @@ def auto_suggestion(word_suggetions,model,tokenizer,lemmetizer):
             words = words[-3:]
             print(f"i am suggesting to you this word on the bases of these words :- {words}")
             predicted_word = word_suggetions(model=model,tokenizer=tokenizer,lemmetizer=lemmetizer,text=words)
-            words.append(predicted_word)
+            search_paragraph = text+" "+predicted_word
         print(predicted_word)
-        print(f"your search paragraph :- {words}")
+        print(f"your search paragraph :- {search_paragraph}")
