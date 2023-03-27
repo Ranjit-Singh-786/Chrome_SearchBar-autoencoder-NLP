@@ -12,6 +12,17 @@ i Build a Robust Training Pipeline by the python Oop concepts, because in future
 and according to the Dataset i has managed my Training Pipeline components.
 and in the modelEvaluation my code will compare accuracy to the previous model. if my current model will be better to the previous model. then my current model will go to the production.
 
+### Training Pipelines components.
+<ul>
+<li>Data ingestion.</li>
+<li>Data validation.</li>
+<li>Data cleaning.</li>
+<li>Data Transformation.</li>
+<li>ModelTrainer.</li>
+<li>ModelEvaluation. </li>
+<li>ModelPusher.</li>
+</ul>
+
 ### To complete this project, i arranged or scraped chrome History of multiple chrome users.
 <p><b>i arranged the chrome history from multiple of my collegeus and friends, because i wants to complete this project on the realworld dataset. when i was got the histories of the chrome users, there are very messy data was available, i did lot of text preprocessing on the chrome user histories. then i performed NLP operation on my dataset. </b></p>
 

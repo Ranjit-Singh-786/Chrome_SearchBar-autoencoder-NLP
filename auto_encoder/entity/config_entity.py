@@ -18,6 +18,7 @@ WORD_INDEX_FIL = os.getenv('WORD_INDEX_FIL')
 X_TRAIN_DATA_FILE_NAME = os.getenv('X_TRAIN_DATA_FILE_NAME')
 Y_TRAIN_DATA_FILE_NAME = os.getenv('Y_TRAIN_DATA_FILE_NAME')
 MODEL_NAME = os.getenv('MODEL_NAME')
+LEMMETIZER_NAME = os.getenv('LEMMETIZER_NAME')
 
 
 
@@ -74,6 +75,7 @@ class DataTransformationConfig:
             self.Train_data_dir  = os.path.join(self.transformation_dir,'Trained_data')
             self.x_train_file_path = os.path.join(self.Train_data_dir,X_TRAIN_DATA_FILE_NAME)
             self.y_train_file_path = os.path.join(self.Train_data_dir,Y_TRAIN_DATA_FILE_NAME)
+            self.lemmetizer_obj_path = os.path.join(self.lemmetized_dir,LEMMETIZER_NAME)
         except Exception as e:
             raise AutoencoderException(e,sys)
 
@@ -89,3 +91,16 @@ class ModelTrainerConfig:
                 raise AutoencoderException(e,sys)
 
 
+class ModelPusherConfig:
+    def __init__(self,Training_pipeline_config:TrainingPipelineConfig):
+        self.model_Pusher_dir  = os.path.join(Training_pipeline_config.artifact_dir,'modelPusher')
+        try:
+            self.saved_model = os.path.join('saved_models')
+            self.pusher_model_dir = os.path.join(self.model_Pusher_dir,'saved_models')
+            self.pusher_model_path = os.path.join(self.pusher_model_dir,MODEL_NAME)
+            self.pusher_Toknizer_path = os.path.join(self.pusher_model_dir,TOKENIZER_NAME)
+            self.pusher_lemmetizer_path = os.path.join(self.pusher_model_dir,LEMMETIZER_NAME)
+            self.pusher_wordIndex_path = os.path.join(self.pusher_model_dir,WORD_INDEX_FIL)
+
+        except Exception as e:
+            raise AutoencoderException(e,sys)

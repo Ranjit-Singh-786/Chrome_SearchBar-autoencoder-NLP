@@ -22,6 +22,9 @@ class DataTransformationArtifact:
     x_train_data_path:str
     y_train_data_path:str
     word_index_path:str
+    tokenizer_model_path:str
+    lemmetizer_model_path:str
+
 
 @dataclass
 class ModelTrainerArtifact:
@@ -36,4 +39,10 @@ class ModelEvaluationArtifact:
 
 @dataclass
 class ModelpusherArtifact:
-    pass
+    pusher_model_dir:str
+    saved_model_dir:str
+    lemmetizer_path:str
+    tokenizer_path:str
+    wordindex_path:str
+    vocab_size:str
+    trained_model_path:str

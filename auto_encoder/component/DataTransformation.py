@@ -48,8 +48,11 @@ class DataTransformation:
 
             logging.info(f"text_data successfully lemmetized !")
             lemmetized_file_path = self.datatransformationconfig.lemmetized_file_path
+            lemmetizer_obj_path = self.datatransformationconfig.lemmetizer_obj_path
             logging.info(f"saving the lemmetized file at this position :- {lemmetized_file_path}")
+
             utils.save_text_file(file_path=lemmetized_file_path,text=lemmetized_data)
+            utils.save_object(file_path=lemmetizer_obj_path,obj=lemmetizer)
 
             
             return lemmetized_file_path
@@ -158,6 +161,8 @@ class DataTransformation:
                 x_train_data_path=x_train_file_path,
                 y_train_data_path=y_train_file_path ,
                 word_index_path = word_index_file_path,
+                tokenizer_model_path=self.datatransformationconfig.tokenizer_model_path,
+                lemmetizer_model_path=self.datatransformationconfig.lemmetizer_obj_path
                 )
             return transformation_artifact
         except Exception as e:

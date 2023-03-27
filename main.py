@@ -7,6 +7,7 @@ from auto_encoder.component.DataValidation import DataValidation
 from auto_encoder.component.DataTransformation import DataTransformation
 from auto_encoder.component.ModelTrainer import ModelTrainer
 from auto_encoder.component.ModelEvaluatin import ModelEvaluation
+from auto_encoder.component.ModelPusher import ModelPusher
 import os,sys
 from auto_encoder import utils
 
@@ -49,6 +50,13 @@ if __name__=="__main__":
         ModelEvaluation_obj = ModelEvaluation(modeltrainerartifact=model_trainer_artifact,
                                           modeltrainerconfig=ModelTrainerconfigObj)
         ModelEvaluation_obj.InitiateModelEvaluation()
+
+
+        modelpusherConfig = config_entity.ModelPusherConfig(Training_pipeline_config=TrainingPipelineObj)
+        obj_of_model_pusher = ModelPusher(modelpusherconfig=modelpusherConfig,
+                                                transformationArtifact=DataTransformationArtifact,
+                                                modeltrainerArtifact=model_trainer_artifact)
+        obj_of_modelPusherArtifact = obj_of_model_pusher.initiate_Modelpusher()
         
                            
     except Exception as e:
